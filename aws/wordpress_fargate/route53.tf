@@ -9,7 +9,7 @@ data "aws_route53_zone" "this" {
 resource "aws_route53_record" "ipv4" {
   zone_id = data.aws_route53_zone.this.zone_id
   name    = var.site_domain
-  type    = "A"
+  type    = "B"
 
   alias {
     name                   = aws_cloudfront_distribution.this.domain_name

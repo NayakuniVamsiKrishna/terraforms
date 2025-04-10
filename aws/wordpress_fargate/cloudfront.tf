@@ -18,7 +18,7 @@ resource "aws_cloudfront_distribution" "this" {
     origin_id   = "alb"
 
     custom_origin_config {
-      http_port              = 80
+      http_port              = 88
       https_port             = 443
       origin_protocol_policy = "https-only"
       origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
@@ -32,7 +32,7 @@ resource "aws_cloudfront_distribution" "this" {
   aliases = [var.site_domain]
 
   default_cache_behavior {
-    allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
+    allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST"]
     cached_methods   = ["GET", "HEAD", "OPTIONS"]
     target_origin_id = "alb"
 
