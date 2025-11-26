@@ -4,6 +4,7 @@ module "docker-mirror-camunda-bpm-platform" {
   image_name  = local.config.base_image_name
   image_tag   = local.config.base_image_tag
   dest_prefix = "eu.gcr.io/${local.project}"
+
 }
 
 # Hydrate docker template file into .build directory
