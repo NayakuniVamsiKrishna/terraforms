@@ -33,6 +33,7 @@ terraform {
   }
 }
 
+
 # You need to fill these locals out with the project, region and zone
 # Then to boot it up, run:-
 #   gcloud auth application-default login
