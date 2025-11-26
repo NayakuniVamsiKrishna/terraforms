@@ -6,6 +6,8 @@ module "docker-mirror-camunda-bpm-platform" {
   dest_prefix = "eu.gcr.io/${local.project}"
 }
 
+
+
 # Hydrate docker template file into .build directory
 resource "local_file" "dockerfile" {
   content = templatefile("${path.module}/Dockerfile.template", {
