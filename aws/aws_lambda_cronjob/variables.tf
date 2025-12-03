@@ -48,7 +48,7 @@ variable "function_runtime" {
 
 variable "function_env_vars" {
   description = "Which env vars (if any) to invoke the Lambda with"
-  type        = "map"
+  type        = map(string)
 
   default = {
     # This effectively useless, but an empty map can't be used in the "aws_lambda_function" resource
@@ -64,7 +64,7 @@ variable "lambda_logging_enabled" {
 
 variable "tags" {
   description = "AWS Tags to add to all resources created (where possible); see https://aws.amazon.com/answers/account-management/aws-tagging-strategies/"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
