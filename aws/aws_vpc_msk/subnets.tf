@@ -8,10 +8,10 @@ resource "aws_subnet" "private_subnet" {
 
   tags = merge(
     local.common-tags,
-    map(
-      "Name", "MSK-${lower(var.environment)}-private-subnet-${count.index + 1}",
-      "Description", "${lower(var.environment)} private subnet - ${count.index + 1}"
-    )
+    {
+      "Name"        = "MSK-${lower(var.environment)}-private-subnet-${count.index + 1}"
+      "Description" = "${lower(var.environment)} private subnet - ${count.index + 1}"
+    }
   )
 
 }
@@ -26,10 +26,10 @@ resource "aws_subnet" "public_subnet" {
 
   tags = merge(
     local.common-tags,
-    map(
-      "Name", "msk-${lower(var.environment)}-public-subnet-${count.index + 1}",
-      "Description", "${lower(var.environment)} private subnet - ${count.index + 1}"
-    )
+    {
+      "Name"        = "msk-${lower(var.environment)}-public-subnet-${count.index + 1}"
+      "Description" = "${lower(var.environment)} private subnet - ${count.index + 1}"
+    }
   )
 
 }

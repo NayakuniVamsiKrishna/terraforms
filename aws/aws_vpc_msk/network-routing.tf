@@ -3,10 +3,10 @@ resource "aws_internet_gateway" "main-igw" {
   vpc_id = aws_vpc.msk_vpc.id
   tags = merge(
     local.common-tags,
-    map(
-      "Name", "MSK-IGW",
-      "Description", "Internet Gateway"
-    )
+    {
+      "Name"        = "MSK-IGW"
+      "Description" = "Internet Gateway"
+    }
   )
 }
 
@@ -19,10 +19,10 @@ resource "aws_nat_gateway" "main-natgw" {
   subnet_id     = aws_subnet.public_subnet[0].id
   tags = merge(
     local.common-tags,
-    map(
-      "Name", "MSK-NatGateway",
-      "Description", "NAT Gateway"
-    )
+    {
+      "Name"        = "MSK-NatGateway"
+      "Description" = "NAT Gateway"
+    }
   )
 }
 
@@ -37,10 +37,10 @@ resource "aws_route_table" "PublicRouteTable" {
   }
   tags = merge(
     local.common-tags,
-    map(
-      "Name", "MSK-Public-Routetable",
-      "Description", "Public-Routetable"
-    )
+    {
+      "Name"        = "MSK-Public-Routetable"
+      "Description" = "Public-Routetable"
+    }
   )
 
 }
@@ -53,10 +53,10 @@ resource "aws_route_table" "PrivateRouteTable" {
   }
   tags = merge(
     local.common-tags,
-    map(
-      "Name", "MSK-Private-Routetable",
-      "Description", "Private-Routetable"
-    )
+    {
+      "Name"        = "MSK-Private-Routetable"
+      "Description" = "Private-Routetable"
+    }
   )
 }
 

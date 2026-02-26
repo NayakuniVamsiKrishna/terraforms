@@ -54,9 +54,9 @@ resource "aws_instance" "Kafka-Client-EC2-Instance" {
 
   tags = merge(
     local.common-tags,
-    map(
-      "Name", "Kafka-Client-EC2-Instance"
-    )
+    {
+      "Name" = "Kafka-Client-EC2-Instance"
+    }
   )
 }
 
