@@ -29,11 +29,11 @@ variable "vpc_cidr" {
 
 variable "private_subnet_cidrs" {
   description = "Private subnet  - CIDR"
-  type        = list
+  type        = list(any)
 }
 variable "public_subnet_cidrs" {
   description = "Private subnet  - CIDR"
-  type        = list
+  type        = list(any)
 }
 
 # MSK Cluster

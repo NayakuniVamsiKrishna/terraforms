@@ -33,9 +33,9 @@ resource "aws_security_group" "KafkaClusterSG" {
 
   tags = merge(
     local.common-tags,
-    map(
-      "Name", "msk-${lower(var.environment)}-sg-${random_uuid.randuuid.result}"
-    )
+    {
+      "Name" = "msk-${lower(var.environment)}-sg-${random_uuid.randuuid.result}"
+    }
   )
 }
 
@@ -61,8 +61,8 @@ resource "aws_security_group" "KafkaClientInstanceSG" {
 
   tags = merge(
     local.common-tags,
-    map(
-      "Name", "KafkaClientInstanceSG"
-    )
+    {
+      "Name" = "KafkaClientInstanceSG"
+    }
   )
 }
