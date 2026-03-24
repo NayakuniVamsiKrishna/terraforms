@@ -1,5 +1,6 @@
 variable "cronjob_name" {
   description = "Name which will be used to create your Lambda function (e.g. `\"my-important-cronjob\"`)"
+  default = "zachs_cronjob"
 }
 
 variable "name_prefix" {
